@@ -10,8 +10,6 @@ const routes: Routes = [
   //AUTH
   {path: 'login', component:LoginComponent},
   {path: 'register', component:RegisterComponent},
-  //{path: '', redirectTo:'/dashboard/',pathMatch:'full'},
-  //{path: '**', component:NotFoundComponent},
   
 ];
 

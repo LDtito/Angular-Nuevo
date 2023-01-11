@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient as HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-product',
@@ -18,22 +18,47 @@ export class ProductComponent {
   }
 
   getProduct(){
-    const url ="https://api.escuelajs.co/api/v1/products";
+    const url ="https://api.escuelajs.co/api/v1/products/20";
     const response = this.httpClient.get(url).subscribe
     (response => {console.log(response);
     });
   }
 
   createProduct(){
+    const data = {
+      title:"Zapatos",
+      price:20,
+      description:"deportivos / Henry Tito",
+      images:["https://sdfsdgsdhasjh"],
+      categoryId:1
+    }
     const url = "https://api.escuelajs.co/api/v1/products";
     this.httpClient.post(url, data).subscribe(
-      response => {console.log(response);}
+      response => {console.log(response);
+      }
+    );
+  }
+
+  updateProduct(){
+    const data = {
+      title:"camisas",
+      price:25,
+      description:"ropa deportiva / Henry Tito",
+      images:["https://sdfsdgsdhasjh"],
+      categoryId:1
+    }
+    const url = "https://api.escuelajs.co/api/v1/products/226";
+    this.httpClient.put(url, data).subscribe(
+      response => {console.log(response);
+      }
     );
   }
 
   ngOnInit(): void{
     //this.getProducts();
-    this.getProduct();
+    //this.getProduct();
+    //this.createProduct();
+    this.updateProduct();
   }
 
 }
