@@ -15,7 +15,6 @@ const routes: Routes = [
     {path: 'product', component:ProductComponent},
     {path: '', redirectTo:'/dashboard', pathMatch:'full'}
 ] },
-  //{path: '**', component:NotFoundComponent},
 
 ];
 
@@ -25,7 +24,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ],
   exports:[
-    RouterModule
+    RouterModule,
   ],
 })
 export class PagesRoutingModule { }
