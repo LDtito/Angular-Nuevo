@@ -8,9 +8,9 @@ import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   //rutas protegidas
-  {path: 'dashboard', component:PagesComponent,
+  {path: '', component:PagesComponent,
    children:[
-    {path: '', component:DashboardComponent},
+    {path: 'dashboard', component:DashboardComponent},
     {path: 'category', component:CategoryComponent},
     {path: 'product', component:ProductComponent},
     {path: '', redirectTo:'/dashboard', pathMatch:'full'}
