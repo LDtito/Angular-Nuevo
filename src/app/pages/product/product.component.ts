@@ -6,10 +6,10 @@ import {HttpClient as HttpClient} from '@angular/common/http';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
   constructor(private httpClient: HttpClient) {};
 
-  
+
   getProducts():void{
     const url ="https://api.escuelajs.co/api/v1/products";
     const response = this.httpClient.get(url).subscribe
