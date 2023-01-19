@@ -47,7 +47,7 @@ export class ProductComponent implements OnInit {
       description:"ropa deportiva / Henry Tito",
     }
     const url = "https://api.escuelajs.co/api/v1/products/208";
-    this.httpClient.put(url, data).subscribe(
+    this.productHttpService.update(61, data).subscribe(
       response => {console.log(response);
       }
     );
@@ -55,7 +55,7 @@ export class ProductComponent implements OnInit {
 
   deleteProduct(){
     const url = "https://api.escuelajs.co/api/v1/products/208";
-    this.httpClient.delete(url).subscribe(
+    this.productHttpService.destroy(61, url).subscribe(
       response => {console.log(response);
       }
     );
@@ -66,7 +66,7 @@ export class ProductComponent implements OnInit {
     //this.getProduct();
     //this.createProduct();
     //this.updateProduct();
-    this.deleteProduct();
+    //this.deleteProduct();
   }
 
 }
