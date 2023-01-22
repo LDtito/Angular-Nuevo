@@ -31,11 +31,11 @@ export class ProductHttpServiceService {
     return this.httpClient.put<ProductModel>(url, product)
   }
 
-  destroy(id:ProductModel):Observable<any>{
+  destroy(id:ProductModel['id']):Observable<any>{
     const url = `${this.API_URL}/${id}`;
     return this.httpClient.delete<any>(url).pipe(map((response: {rta:boolean}) =>{
       return response.rta;
     })
-    );
+    );  
   }
 }

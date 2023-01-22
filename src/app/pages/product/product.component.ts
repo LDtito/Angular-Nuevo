@@ -53,10 +53,11 @@ export class ProductComponent implements OnInit {
     );
   }
 
-  deleteProduct(){
-    const url = "https://api.escuelajs.co/api/v1/products/208";
-    this.productHttpService.destroy(61, url).subscribe(
-      response => {console.log(response);
+  deleteProduct() {
+    const url = "https://api.escuelajs.co/api/v1/products/192";
+    this.productHttpService.destroy(61).subscribe(
+      response => {
+        console.log(response);
       }
     );
   }
