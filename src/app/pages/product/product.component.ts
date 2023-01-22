@@ -7,6 +7,7 @@ import { ProductHttpServiceService } from 'src/app/services/product-http-service
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
+//Inyeccion de dependencias
 export class ProductComponent implements OnInit {
   constructor(private productHttpService: ProductHttpServiceService) {};
 

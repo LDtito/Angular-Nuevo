@@ -6,16 +6,17 @@ import { map, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+//Inyección de dependencias
 export class ProductHttpServiceService {
   readonly API_URL ="https://api.escuelajs.co/api/v1/products";
 
   constructor(private httpClient: HttpClient) {}
-  //traer todos los productos
+  //Traer todos los productos
   getAll():Observable<ProductModel>{
     const url = `${this.API_URL}`;
     return this.httpClient.get<ProductModel>(url);
   }
-  //traer un producto
+  //Traer un producto
   getOne(id:ProductModel['id']):Observable<ProductModel>{
     const url =`${this.API_URL}/${id}`;
     return this.httpClient.get<ProductModel>(url);
