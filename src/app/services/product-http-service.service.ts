@@ -11,9 +11,9 @@ export class ProductHttpServiceService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getAll():Observable<ProductModel>{
+  getAll():Observable<ProductModel[]>{
     const url = `${this.API_URL}`;
-    return this.httpClient.get<ProductModel>(url);
+    return this.httpClient.get<ProductModel[]>(url);
   }
 
   getOne(id:ProductModel['id']):Observable<ProductModel>{
